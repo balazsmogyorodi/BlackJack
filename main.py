@@ -1,0 +1,4 @@
+import kartyaJatek
+
+
+kartyaJatek.kartyaJatek()
