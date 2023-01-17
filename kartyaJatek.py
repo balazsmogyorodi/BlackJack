@@ -18,7 +18,7 @@ def kartyaJatek():
             i += 1
     def asz():
         for m in range(4):
-            lista.append(1)
+            lista.append(11)
     def keszPakli():
         kartyakListaba_a()
         karyakListaba_b()
@@ -160,7 +160,7 @@ def kartyaJatek():
 
 
 
-    def jatek():
+    def jatekMenet():
         mehet1 = True
         mehet2 = True
         mehet3 = True
@@ -177,7 +177,7 @@ def kartyaJatek():
             return True
 
     def eredmeny():
-        tulment = jatek()
+        tulment = jatekMenet()
         eredmeny1 = szamlalasJatekos1()
         eredmeny2 = szamlalasJatekos2()
         print("\n\t", end="")
