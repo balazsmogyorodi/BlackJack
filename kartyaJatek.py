@@ -35,13 +35,7 @@ def kartyaJatek():
 
 
 
-
-
-
-
     # Játékos összege
-
-
 
 
 
@@ -54,8 +48,6 @@ def kartyaJatek():
             jatekos2.append(pakli[lap])
             pakli.remove(pakli[lap])
             index += 1
-
-
 
     def osztasKiiras():
         osztas()
@@ -101,16 +93,13 @@ def kartyaJatek():
         jatekos1Ker = 5
         while jatekos1Ker < 0 or jatekos1Ker > 1:
             jatekos1Ker = int(input("Kér még lapot az 1.játékos? igen(1), nem(0): "))
-            if jatekos1Ker == 0:
-                return False
-            elif jatekos1Ker == 1:
-                lap = 0
-                index = 0
-                while index < 1:
-                    jatekos1.append(pakli[lap])
-                    pakli.remove(pakli[lap])
-                    index += 1
-                return True
+        if jatekos1Ker == 0:
+            return False
+        elif jatekos1Ker == 1:
+            lap = 0
+            jatekos1.append(pakli[lap])
+            pakli.remove(pakli[lap])
+            return True
 
     def lapot1Szamitas():
         osszeg1 = szamlalasJatekos1()
@@ -124,17 +113,14 @@ def kartyaJatek():
     def lapot2():
         jatekos1Ker = 5
         while jatekos1Ker < 0 or jatekos1Ker > 1:
-            jatekos1Ker = int(input("Kér még lapot az 2.játékos? igen(1), nem(0): "))
-            if jatekos1Ker == 0:
-                return False
-            elif jatekos1Ker == 1:
-                lap = 0
-                index = 0
-                while index < 1:
-                    jatekos2.append(pakli[lap])
-                    pakli.remove(pakli[lap])
-                    index += 1
-                return True
+            jatekos1Ker = int(input("Kér még lapot a 2.játékos? igen(1), nem(0): "))
+        if jatekos1Ker == 0:
+            return False
+        elif jatekos1Ker == 1:
+            lap = 0
+            jatekos2.append(pakli[lap])
+            pakli.remove(pakli[lap])
+            return True
 
     def lapot2Szamitas():
         osszeg2 = szamlalasJatekos2()
@@ -194,7 +180,7 @@ def kartyaJatek():
         tulment = jatek()
         eredmeny1 = szamlalasJatekos1()
         eredmeny2 = szamlalasJatekos2()
-        print("\t")
+        print("\n\t", end="")
         if tulment == False:
             print("DÖNTETLEN!")
         elif tulment == True:
@@ -205,13 +191,23 @@ def kartyaJatek():
             elif eredmeny1 == eredmeny2:
                 print("DÖNTETLEN!")
 
+    def jatekUjra():
+        szeretnel = 5
+        while szeretnel < 0 or szeretnel > 1:
+            szeretnel = int(input("Szeretnétek menni még egy kört? igen(1) nem(0) "))
+        if szeretnel == 0:
+            return False
+        elif szeretnel == 1:
+            print("\n\n\n\n")
+            return True
+    def teljesJatek():
+        ujra = True
+        while ujra == True:
+            kevertPakli()
+            osztasKiiras()
+            eredmeny()
+            ujra = jatekUjra()
 
-
-
-
-
-    kevertPakli()
-    osztasKiiras()
-    eredmeny()
+    teljesJatek()
 
 
